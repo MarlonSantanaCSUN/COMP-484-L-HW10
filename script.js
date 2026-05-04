@@ -45,6 +45,11 @@ function clickedTreatButton() {
   pet_info.happiness += 5;
   pet_info.weight += 2;
 
+ // Violaion Error test: Simulate a long-running operation that blocks the UI
+  let start = Date.now();
+  while (Date.now() - start < 3000) {
+    // Busy wait for 3 seconds (blocks UI)
+  }
   console.log("After:", pet_info); // Log pet info after changes to verify updates
 
   console.groupEnd(); // End log group
@@ -121,7 +126,7 @@ function checkWeightAndHappinessBeforeUpdating() {
     pet_info.happiness = 0;
   }
 }
-    
+
 // Update UI
 function updatePetInfoInHtml() {
   $('.name').text(pet_info.name);
@@ -146,6 +151,9 @@ function switchPet() {
 
   showMessage("Now playing with " + pet_info.name + " 🐾");
   checkAndUpdatePetInfoInHtml();
+
+  //if (!pet_info.nonexistentProperty) { //TypeError test
+  //console.log(pet_info.nonexistentProperty.toUpperCase());
 }
 
 // Visual notification (NO alert/console)
