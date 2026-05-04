@@ -1,3 +1,9 @@
+console.log("LOG: App started");
+console.info("INFO: App initialized");
+console.warn("WARNING: Demo warning message");
+console.error("ERROR: Demo error message");
+//Filter as log level in browser console to see only warnings and above
+
 console.log(
   "%cGiga Pet App Loaded!",
   "color: green; font-size: 16px; font-weight: bold;"
@@ -39,17 +45,17 @@ var pet_info = pets[currentPetIndex];
 // Treat → +happiness +weight
 function clickedTreatButton() {
   console.group("Treat Button Clicked"); // Group logs for better organization
-
+  console.log("TREAT_EVENT: User gave a treat");
   console.log("Before:", pet_info); // Log pet info before changes for debugging
 
   pet_info.happiness += 5;
   pet_info.weight += 2;
 
  // Violaion Error test: Simulate a long-running operation that blocks the UI
-  let start = Date.now();
-  while (Date.now() - start < 3000) {
-    // Busy wait for 3 seconds (blocks UI)
-  }
+ //let start = Date.now();
+  //while (Date.now() - start < 3000) {
+  // Busy wait for 3 seconds (blocks UI)
+  //}
   console.log("After:", pet_info); // Log pet info after changes to verify updates
 
   console.groupEnd(); // End log group
@@ -61,7 +67,7 @@ function clickedTreatButton() {
 // Play → +happiness -weight
 function clickedPlayButton() {
   console.group("Play Button Clicked");
-
+  console.log("PLAY_EVENT: User clicked play button");
   console.log("Before:", pet_info);
 
   pet_info.happiness += 8;
