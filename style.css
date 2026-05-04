@@ -1,0 +1,109 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  margin: 0;
+  background: #74b9ff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Header */
+header {
+  width: 100%;
+  text-align: center;
+  padding: 15px;
+  background: #2d3436;
+  color: white;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+h1 {
+  margin: 0;
+}
+
+/* Main layout */
+main {
+  display: flex;
+  gap: 30px;
+  margin-top: 30px;
+  align-items: flex-start;
+}
+
+/* Pet Card (left side) */
+.pet-image-container {
+  background: white;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.pet-image {
+  height: 250px;
+  border-radius: 15px;
+}
+
+/* Dashboard Card (right side) */
+.dashboard {
+  background: white;
+  padding: 20px;
+  border-radius: 20px;
+  width: 300px;
+  height: 400px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* Stats */
+.dashboard div {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+/* Buttons */
+.button-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.button-container button {
+  flex: 1 1 45%;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.1s, box-shadow 0.1s;
+  color: white;
+}
+
+/* Pokémon-style button colors */
+.treat-button { background: #00b894; }
+.play-button { background: #0984e3; }
+.exercise-button { background: #d63031; }
+.sleep-button { background: #6c5ce7; }
+.switch-button { background: #fdcb6e; color: black; }
+
+.button-container button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+}
+
+/* Messages (like battle text box) */
+.message-container {
+  margin-top: 15px;
+  height: 100px;
+  overflow: hidden;
+}
+
+.pet-message {
+  background: #ffeaa7;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 14px;
+  border: 2px solid #fdcb6e;
+}
