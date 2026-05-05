@@ -52,10 +52,10 @@ function clickedTreatButton() {
   pet_info.weight += 2;
 
  // Violaion Error test: Simulate a long-running operation that blocks the UI
- //let start = Date.now();
-  //while (Date.now() - start < 3000) {
+ let start = Date.now();
+  while (Date.now() - start < 3000) {
   // Busy wait for 3 seconds (blocks UI)
-  //}
+  }
   console.log("After:", pet_info); // Log pet info after changes to verify updates
 
   console.groupEnd(); // End log group
@@ -66,12 +66,14 @@ function clickedTreatButton() {
 
 // Play → +happiness -weight
 function clickedPlayButton() {
+  
   console.group("Play Button Clicked");
   console.log("PLAY_EVENT: User clicked play button");
   console.log("Before:", pet_info);
 
-  pet_info.happiness += 8;
+  pet_info.happiness += "8"; // BUG: string instead of number to demonstrate the issue
   pet_info.weight -= 1;
+  
   
   console.log("After:", pet_info);
 
@@ -176,5 +178,7 @@ function showMessage(message) {
   msg.fadeTo(2000, 0.3);
 }
 
-
-
+console.log("PET_NAME: " + pet_info.name);
+console.log("PET_WEIGHT: " + pet_info.weight);
+console.log("PET_HAPPINESS: " + pet_info.happiness);
+//Filter by regular expression in browser console to see only pet info logs (e.g., "PET_")
